@@ -11,7 +11,7 @@ func main() {
 
 	http.Handle("/", http.FileServer(http.Dir("./public")))
 
-	port := "3031"
+	port := "3032"
 
 	// http.HandleFunc("/insert", insert)
 	// http.HandleFunc("/find", find)

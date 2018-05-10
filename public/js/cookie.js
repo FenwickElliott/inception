@@ -1,6 +1,17 @@
-let date = new Date();
+let inceptionID = getCookie("inceptionID");
 
-if (!document.cookie) {
+if (!inceptionID) {
+    let date = new Date();
+    inceptionID = sha1(window + date);
     date.setTime(date.getTime()+(365*24*60*60*1000));
-    document.cookie = "fID=" + sha1(window + date) + ";expires="+ date.toUTCString();
+    document.cookie = "inceptionID=" + inceptionID + ";expires="+ date.toUTCString();
+}
+
+document.getElementById("tPix").src = "http://localhost:8080/in?partner=inception&cookie=" + inceptionID;
+
+
+function getCookie(name) {
+    let value = "; " + document.cookie;
+    let parts = value.split("; " + name + "=");
+    if (parts.length == 2) return parts.pop().split(";").shift();
 }
