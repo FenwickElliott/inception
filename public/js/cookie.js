@@ -7,8 +7,7 @@ if (!inceptionID) {
     document.cookie = "inceptionID=" + inceptionID + ";expires="+ date.toUTCString();
 }
 
-document.getElementById("tPix").src = "http://localhost:8080/in?partner=inception&cookie=" + inceptionID;
-
+document.getElementById("tPix").src = "https://cookies.fenwickelliott.io/in?partner=inception&cookie=" + inceptionID;
 
 function getCookie(name) {
     let value = "; " + document.cookie;
